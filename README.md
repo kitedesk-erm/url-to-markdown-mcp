@@ -1,6 +1,6 @@
 # url-to-markdown-mcp
 
-<!-- mcp-name: io.github.microapishop/url-to-markdown-mcp -->
+<!-- mcp-name: io.github.kitedesk-erm/url-to-markdown-mcp -->
 
 **An MCP server that turns any URL into clean Markdown or plain text for your AI assistant.** It gives Claude, Cursor, Windsurf, Cline, VS Code Copilot and any other MCP client one tool, `extract_url`. The tool fetches a page and returns only the main content (no nav, ads, cookie banners, sidebars, footers or comments), plus the title, author, publish date, word count and reading time.
 
@@ -117,7 +117,7 @@ The repo includes `smithery.yaml` and a `Dockerfile`. You can also run it in Doc
 If you're installing before the npm release, build from source:
 
 ```bash
-git clone https://github.com/microapishop/url-to-markdown-mcp.git
+git clone https://github.com/kitedesk-erm/url-to-markdown-mcp.git
 cd url-to-markdown-mcp && npm install && npm run build
 # then use "command": "node", "args": ["/absolute/path/to/url-to-markdown-mcp/dist/index.js"]
 ```
@@ -148,7 +148,7 @@ The tests use a fake key against a local mock, so no real key is needed or store
 
 ## Related
 
-- [url-to-markdown-api](https://github.com/microapishop/url-to-markdown-api): zero-dependency JS/TS and Python clients, plus RAG, agent and read-later examples
+- [url-to-markdown-api](https://github.com/kitedesk-erm/url-to-markdown-api): zero-dependency JS/TS and Python clients, plus RAG, agent and read-later examples
 - [Zyla listing: Article Extractor and URL to Markdown API](https://zylalabs.com/api-marketplace/other/article+extractor+and+url+to+markdown+api/14315)
 
 ## License

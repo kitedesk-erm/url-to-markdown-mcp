@@ -1,10 +1,10 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.microapishop/url-to-markdown-mcp",
+  "name": "io.github.kitedesk-erm/url-to-markdown-mcp",
   "title": "URL to Markdown (Article Extractor)",
   "description": "Turn any URL into clean Markdown or text for LLMs, RAG and agents. Strips nav, ads and footers.",
   "repository": {
-    "url": "https://github.com/microapishop/url-to-markdown-mcp",
+    "url": "https://github.com/kitedesk-erm/url-to-markdown-mcp",
     "source": "github"
   },
   "websiteUrl": "https://zylalabs.com/api-marketplace/other/article+extractor+and+url+to+markdown+api/14315",

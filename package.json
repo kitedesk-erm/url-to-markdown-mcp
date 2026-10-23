@@ -2,7 +2,7 @@
   "name": "url-to-markdown-mcp",
   "version": "1.0.0",
   "description": "MCP server: turn any URL into clean Markdown or text for LLMs, RAG and AI agents (article extractor). One tool: extract_url.",
-  "mcpName": "io.github.microapishop/url-to-markdown-mcp",
+  "mcpName": "io.github.kitedesk-erm/url-to-markdown-mcp",
   "type": "module",
   "bin": {
     "url-to-markdown-mcp": "dist/index.js"
@@ -37,13 +37,13 @@
     "claude",
     "cursor"
   ],
-  "homepage": "https://github.com/microapishop/url-to-markdown-mcp#readme",
+  "homepage": "https://github.com/kitedesk-erm/url-to-markdown-mcp#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/microapishop/url-to-markdown-mcp.git"
+    "url": "git+https://github.com/kitedesk-erm/url-to-markdown-mcp.git"
   },
   "bugs": {
-    "url": "https://github.com/microapishop/url-to-markdown-mcp/issues"
+    "url": "https://github.com/kitedesk-erm/url-to-markdown-mcp/issues"
   },
   "author": "Micro-API Shop",
   "license": "MIT",
