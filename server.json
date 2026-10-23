@@ -13,7 +13,7 @@
     {
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
-      "identifier": "url-to-markdown-mcp",
+      "identifier": "@kitedesk-erm/url-to-markdown-mcp",
       "version": "1.0.0",
       "runtimeHint": "npx",
       "transport": {

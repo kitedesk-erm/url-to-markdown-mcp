@@ -39,7 +39,7 @@ Errors come back as MCP tool errors (`isError: true`) with a readable message, s
 
 ## Install
 
-You need Node.js 18 or later. Every client runs the same command, `npx -y url-to-markdown-mcp`, with your key in `ZYLA_API_KEY`.
+You need Node.js 18 or later. Every client runs the same command, `npx -y @kitedesk-erm/url-to-markdown-mcp`, with your key in `ZYLA_API_KEY`.
 
 ### Claude Desktop
 
@@ -50,7 +50,7 @@ Edit `claude_desktop_config.json` (macOS: `~/Library/Application Support/Claude/
   "mcpServers": {
     "url-to-markdown": {
       "command": "npx",
-      "args": ["-y", "url-to-markdown-mcp"],
+      "args": ["-y", "@kitedesk-erm/url-to-markdown-mcp"],
       "env": { "ZYLA_API_KEY": "your-zyla-api-key" }
     }
   }
@@ -60,7 +60,7 @@ Edit `claude_desktop_config.json` (macOS: `~/Library/Application Support/Claude/
 ### Claude Code
 
 ```bash
-claude mcp add url-to-markdown --env ZYLA_API_KEY=your-zyla-api-key -- npx -y url-to-markdown-mcp
+claude mcp add url-to-markdown --env ZYLA_API_KEY=your-zyla-api-key -- npx -y @kitedesk-erm/url-to-markdown-mcp
 ```
 
 ### Cursor
@@ -72,7 +72,7 @@ Use `~/.cursor/mcp.json` for a global setup, or `.cursor/mcp.json` for a single 
   "mcpServers": {
     "url-to-markdown": {
       "command": "npx",
-      "args": ["-y", "url-to-markdown-mcp"],
+      "args": ["-y", "@kitedesk-erm/url-to-markdown-mcp"],
       "env": { "ZYLA_API_KEY": "your-zyla-api-key" }
     }
   }
@@ -92,7 +92,7 @@ Add this to `.vscode/mcp.json`. VS Code prompts for the key and stores it secure
     "url-to-markdown": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "url-to-markdown-mcp"],
+      "args": ["-y", "@kitedesk-erm/url-to-markdown-mcp"],
       "env": { "ZYLA_API_KEY": "${input:zyla-key}" }
     }
   }
@@ -104,7 +104,7 @@ Add this to `.vscode/mcp.json`. VS Code prompts for the key and stores it secure
 Most clients take the same `mcpServers` block shown for Claude Desktop and Cursor (Windsurf uses `~/.codeium/windsurf/mcp_config.json`; Cline uses its *MCP Servers → Configure* panel). The generic form is:
 
 - **command:** `npx`
-- **args:** `["-y", "url-to-markdown-mcp"]`
+- **args:** `["-y", "@kitedesk-erm/url-to-markdown-mcp"]`
 - **env:** `ZYLA_API_KEY=<your key>`
 - **transport:** stdio
 

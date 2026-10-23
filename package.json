@@ -1,5 +1,5 @@
 {
-  "name": "url-to-markdown-mcp",
+  "name": "@kitedesk-erm/url-to-markdown-mcp",
   "version": "1.0.0",
   "description": "MCP server: turn any URL into clean Markdown or text for LLMs, RAG and AI agents (article extractor). One tool: extract_url.",
   "mcpName": "io.github.kitedesk-erm/url-to-markdown-mcp",
