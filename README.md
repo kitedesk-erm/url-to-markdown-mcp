@@ -2,6 +2,10 @@
 
 <!-- mcp-name: io.github.kitedesk-erm/url-to-markdown-mcp -->
 
+[![npm](https://img.shields.io/npm/v/@kitedesk-erm/url-to-markdown-mcp)](https://www.npmjs.com/package/@kitedesk-erm/url-to-markdown-mcp) [![MCP Registry](https://img.shields.io/badge/MCP%20Registry-io.github.kitedesk--erm%2Furl--to--markdown--mcp-blue)](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.kitedesk-erm/url-to-markdown-mcp) [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
+**npm:** [`@kitedesk-erm/url-to-markdown-mcp`](https://www.npmjs.com/package/@kitedesk-erm/url-to-markdown-mcp) · **Official MCP Registry:** [`io.github.kitedesk-erm/url-to-markdown-mcp`](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.kitedesk-erm/url-to-markdown-mcp)
+
 **An MCP server that turns any URL into clean Markdown or plain text for your AI assistant.** It gives Claude, Cursor, Windsurf, Cline, VS Code Copilot and any other MCP client one tool, `extract_url`. The tool fetches a page and returns only the main content (no nav, ads, cookie banners, sidebars, footers or comments), plus the title, author, publish date, word count and reading time.
 
 It's backed by the hosted [Article Extractor and URL to Markdown API on Zyla API Hub](https://zylalabs.com/api-marketplace/other/article+extractor+and+url+to+markdown+api/14315). **You'll need a Zyla API key, and you can [get one with a 7-day free trial](https://zylalabs.com/api-marketplace/other/article+extractor+and+url+to+markdown+api/14315).**
