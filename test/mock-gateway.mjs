@@ -20,6 +20,10 @@ export function startMockGateway({ upstream = process.env.UPSTREAM, port = 0 } =
     const send = (code, obj) => { res.writeHead(code, { "content-type": "application/json" }); res.end(JSON.stringify(obj)); };
     if (!/^Bearer \S+/.test(req.headers.authorization || "")) return send(401, { message: "Unauthenticated." });
     if (!u.searchParams.get("url")) return send(400, { error: "invalid or missing 'url'" });
+    if (!upstream && /blocked\.example/.test(u.searchParams.get("url"))) {
+      return send(502, { error: "upstream_blocked", upstream_status: 403, url: u.searchParams.get("url"),
+        message: "The target site refused or challenged the request (HTTP 403); no content was extracted." });
+    }
     if (!upstream) {
       const f = { ...FIXTURE, url: u.searchParams.get("url") };
       const fmt = u.searchParams.get("format");

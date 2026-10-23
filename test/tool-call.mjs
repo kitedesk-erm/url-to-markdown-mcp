@@ -39,6 +39,12 @@ try {
     assert.match(bad.content[0].text, /url not allowed/);
     console.log("ok SSRF-blocked URL -> isError: " + bad.content[0].text);
   }
+  if (!live) {
+    const blk = await client.callTool({ name: "extract_url", arguments: { url: "https://blocked.example/a" } });
+    assert.equal(blk.isError, true);
+    assert.match(blk.content[0].text, /upstream_blocked: The target site refused/);
+    console.log("ok 502 upstream_blocked -> isError: " + blk.content[0].text.slice(0, 90) + "...");
+  }
   const txt = await client.callTool({ name: "extract_url", arguments: { url: target, format: "text", max_chars: 100 } });
   assert.equal(g.seen.at(-1).query.format, "text");
   assert.notEqual(txt.isError, true);

@@ -35,7 +35,7 @@ June 2021
 It might not seem there's much to learn about how to work hard. Anyone who's been to school knows what it entails, ...
 ```
 
-Errors (a missing key, a blocked URL, a non-HTML target, an unreachable site, or a Zyla quota or rate limit) come back as MCP tool errors (`isError: true`) with a readable message, so the model can recover.
+Errors come back as MCP tool errors (`isError: true`) with a readable message, so the model can recover. That covers a missing key, a private or localhost URL, a non-HTML target, an unreachable site, a Zyla quota or rate limit, and the API's `502` errors: `upstream_blocked` (the site returned 401/403/429/451 or a bot-challenge page) and `empty_content` (about 0 words, for example a page rendered client-side). Zyla only bills successful calls, so **blocked or empty pages aren't charged**.
 
 ## Install
 
@@ -131,7 +131,7 @@ cd url-to-markdown-mcp && npm install && npm run build
 ## Limits
 
 - No JavaScript rendering. Pages that build their content only in the browser (some SPAs) return little text.
-- Paywalled or bot-protected sites return only what they serve publicly. When the site answers with a challenge page, the tool adds a warning to the header.
+- Paywalled or bot-protected sites return only what they serve publicly. Blocked or challenged requests return an `upstream_blocked` tool error and aren't billed.
 - Your Zyla plan sets the quota and rate limit. Only successful (200) calls count against your plan.
 
 ## Development

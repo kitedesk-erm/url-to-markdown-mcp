@@ -60,8 +60,11 @@ export async function callExtract(
   let body: any;
   try { body = JSON.parse(raw); } catch { body = raw; }
   if (!res.ok) {
-    const msg = (body && typeof body === "object" && (body.error || body.message)) || `HTTP ${res.status}`;
-    const hint = res.status === 401 || res.status === 403 ? " (check ZYLA_API_KEY and that your Zyla subscription/trial is active)"
+    const code = body && typeof body === "object" ? body.error : undefined;
+    const msg = [code, body && typeof body === "object" ? body.message : undefined].filter(Boolean).join(": ") || `HTTP ${res.status}`;
+    const hint = code === "upstream_blocked" ? " Try another source for this content (the site blocks automated readers)."
+      : code === "empty_content" ? " The page may need JavaScript to render; try a different URL for the same content."
+      : res.status === 401 || res.status === 403 ? " (check ZYLA_API_KEY and that your Zyla subscription/trial is active)"
       : res.status === 429 ? " (Zyla rate limit or monthly quota reached)" : "";
     throw new ExtractError(`Extract failed: ${msg}${hint}`, res.status, body);
   }
@@ -77,7 +80,7 @@ export function formatArticle(a: Article, format: ExtractArgs["format"] = "markd
     a.site_name ? `Site: ${a.site_name}` : null,
     `Source: ${a.url}`,
     `Words: ${a.word_count} (~${a.reading_time_min} min read)${a.truncated ? " | truncated by max_chars" : ""}`,
-    a.status && a.status !== 200 ? `Warning: the target site returned HTTP ${a.status}; content may be a block/challenge page.` : null,
+    a.status && a.status !== 200 ? `Note: the target site returned HTTP ${a.status}.` : null,
   ].filter(Boolean).join("\n");
   const parts: string[] = [meta];
   if (format !== "text" && a.markdown !== undefined) parts.push(a.markdown);
