@@ -1,0 +1,33 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.microapishop/url-to-markdown-mcp",
+  "title": "URL to Markdown (Article Extractor)",
+  "description": "Turn any URL into clean Markdown or text for LLMs, RAG and agents. Strips nav, ads and footers.",
+  "repository": {
+    "url": "https://github.com/microapishop/url-to-markdown-mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://zylalabs.com/api-marketplace/other/article+extractor+and+url+to+markdown+api/14315",
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "url-to-markdown-mcp",
+      "version": "1.0.0",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "ZYLA_API_KEY",
+          "description": "Your Zyla API Hub key for the Article Extractor and URL to Markdown API (7-day free trial)",
+          "isRequired": true,
+          "isSecret": true,
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}

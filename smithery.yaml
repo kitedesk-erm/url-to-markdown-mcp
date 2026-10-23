@@ -1,0 +1,22 @@
+# Smithery configuration: https://smithery.ai/docs/build/project-config
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    required:
+      - zylaApiKey
+    properties:
+      zylaApiKey:
+        type: string
+        description: Your Zyla API Hub key for the Article Extractor and URL to Markdown API (get one + 7-day trial at https://zylalabs.com/api-marketplace/other/article+extractor+and+url+to+markdown+api/14315)
+  commandFunction: |-
+    (config) => ({
+      command: 'node',
+      args: ['dist/index.js'],
+      env: { ZYLA_API_KEY: config.zylaApiKey }
+    })
+  exampleConfig:
+    zylaApiKey: your-zyla-api-key
+build:
+  dockerfile: Dockerfile
+  dockerBuildPath: .

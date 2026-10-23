@@ -1,0 +1,61 @@
+{
+  "name": "url-to-markdown-mcp",
+  "version": "1.0.0",
+  "description": "MCP server: turn any URL into clean Markdown or text for LLMs, RAG and AI agents (article extractor). One tool: extract_url.",
+  "mcpName": "io.github.microapishop/url-to-markdown-mcp",
+  "type": "module",
+  "bin": {
+    "url-to-markdown-mcp": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE",
+    "server.json"
+  ],
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('dist/index.js',0o755)\"",
+    "start": "node dist/index.js",
+    "test": "npm run build && node test/handshake.mjs && node test/tool-call.mjs && node test/metadata.mjs",
+    "test:live": "npm run build && node test/handshake.mjs && UPSTREAM=https://article-extract.microapishop.workers.dev node test/tool-call.mjs",
+    "set-github-handle": "node scripts/set-github-handle.mjs",
+    "prepublishOnly": "npm test"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "url-to-markdown",
+    "html-to-markdown",
+    "article-extractor",
+    "readability",
+    "web-scraping",
+    "llm",
+    "rag",
+    "ai-agent",
+    "claude",
+    "cursor"
+  ],
+  "homepage": "https://github.com/microapishop/url-to-markdown-mcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/microapishop/url-to-markdown-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/microapishop/url-to-markdown-mcp/issues"
+  },
+  "author": "Micro-API Shop",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.9.0"
+  }
+}

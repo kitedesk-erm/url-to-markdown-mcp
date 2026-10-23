@@ -1,0 +1,17 @@
+# secrets
+.env
+.env.*
+!.env.example
+# node
+node_modules/
+npm-debug.log*
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+# output
+saved/
+*.log
+.DS_Store
+dist/
